@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>Doctor website</title>
     
     <style>
@@ -10,6 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #fff7fb;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         header {
@@ -106,34 +108,139 @@
             padding: 15px;
             margin-top: 30px;
         }
+        
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+
+    
+    header {
+        position: relative !important;
+        padding: 15px 10px !important;
+        text-align: center !important;
+    }
+
+    header div[style*="position: absolute"] {
+        position: static !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    header button {
+        margin-right: 0 !important;
+        padding: 8px 15px !important;
+        font-size: 13px !important;
+    }
+
+   
+    nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    nav a {
+        margin: 5px !important;
+        font-size: 14px !important;
+    }
+
+   
+    .container {
+        width: 92% !important;
+        padding: 15px !important;
+        margin: 15px auto !important;
+    }
+
+    div[style*="display: flex"],
+    div[style*="display:flex"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    div[style*="min-width: 400px"],
+    div[style*="min-width:400px"] {
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+
+    
+    div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    
+    .product-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        gap: 15px !important;
+        overflow-x: hidden !important;
+    }
+    h1 {
+   
+        font-size: 22px !important;
+    }
+
+    h2 {
+        font-size: 20px !important;
+    }
+
+    h3 {
+        font-size: 24px !important;
+    }
+
+    
+    input, select, textarea, button {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
     </style>
 </head>
 <body>
-    <header style="background-color: coral;">
-        <div style="position: absolute; top: 20px; right: 40px; z-index: 10;">
-          <a href="login.html">
-    <button style="padding: 10px 25px; border-radius: 20px; border: 1px solid white; background: transparent; color:black; margin-right: 10px; cursor: pointer; font-weight: bold;">
-      LOGIN
-    </button>
-    </a>
-    <a href="signup.html">
-    <button style="padding: 10px 25px; border-radius: 20px; border: none; background: white; color: black; cursor: pointer; font-weight: bold;">
-      SIGN UP
-    </button>
-    </a>
+    <header style="background-color: coral; padding: 15px; text-align: center; position: relative;">
+    
+   
+    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
+        <a href="login.html">
+            <button style="padding: 8px 18px; border-radius: 20px; border: 1px solid white; background: transparent; color: black; font-weight: bold; cursor: pointer;">LOGIN</button>
+        </a>
+        <a href="signup.html">
+            <button style="padding: 8px 18px; border-radius: 20px; border: none; background: white; color: black; font-weight: bold; cursor: pointer;">SIGN UP</button>
+        </a>
+    </div>
 
-  </div>
-    <h1>Gul Beauty Saloon</h1>
-    <nav style="text-align: center;">
-        <a href="Index.html">Home</a>
-        <a href="Services.html">Services</a>
-        <a href="Booking.html">Booking</a>
+    
+    <h1 style="margin: 10px 0;">Gul Beauty Saloon</h1>
+
+   
+    <nav style="display: flex; justify-content: center; gap: 15px; text-align: center;">
+        <a href="Index.html" style="color: #5a3d5c; text-decoration: none;">Home</a>
+        <a href="Services.html" style="color: #5a3d5c; text-decoration: none;">Services</a>
+        <a href="Booking.html" style="color: #5a3d5c; text-decoration: none;">Booking</a>
     </nav>
-    </header>   
+</header>
     
     <div>
         
-    <img src="WhatsApp Image 2026-09-15 at 8.39.02 AM.jpeg" alt="this is an image">
+    <img src="WhatsApp Image 2026-09-15 at 8.39.02 AM.jpeg" alt="this is an image" style="width: 100%;max-width: 100%;height: auto;display: block;">
     <div style="background: black; color: white; text-align: center; padding: 10px; font-size: 14px; letter-spacing: 2px;">
 
   <span>Gul.Saloon</span> &nbsp; • &nbsp;
