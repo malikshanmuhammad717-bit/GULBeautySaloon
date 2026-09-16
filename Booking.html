@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GUL Beauty Saloon - Booking</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color:white;
+        }
+
+        header {
+            background-color: gold;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: purple;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #5a3d5c;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 700px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ddd;
+        }
+
+        h2 {
+            color: #5a3d5c;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .services label,
+        .time label {
+            display: block;
+            font-weight: normal;
+        }
+
+        .services input,
+        .time input {
+            width: auto;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: plum;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #d8a0d8;
+        }
+
+        #successMessage {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d9ffd9;
+            color: green;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: plum;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>GUL Beauty Saloon</h1>
+
+        <nav>
+            <a href="Index.html">Home</a>
+            <a href="Services.html">Services</a>
+            <a href="Booking.html">Booking</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+
+        <h2>Book Your Appointment</h2>
+
+        <p>
+            Book your appointment at GUL Beauty Saloon and enjoy
+            our professional beauty services.
+        </p>
+
+
+        <form id="bookingForm">
+            <label for="customerName">Customer Name</label>
+            <input type="text" id="customerName"
+                   placeholder="Enter your name" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone"
+                   placeholder="Enter your phone number" required>
+            <label for="email">Email</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email" required>
+
+            <h3>Select Services</h3>
+
+            <div class="services">
+
+                <label>
+                    <input type="checkbox" name="service" value="Hair Care">
+                    Hair Care
+                </label>
+
+                <label>
+                    <input type="checkbox" name="service" value="Facials">
+                    Facials
+                </label>
+
+                <label>
+                    <input type="checkbox" name="service" value="Make Up">
+                    Make Up
+                </label>
+
+                <label>
+                    <input type="checkbox" name="service" value="Threading & Waxing">
+                    Threading & Waxing
+                </label>
+
+            </div>
+            <label for="date">Select Date</label>
+            <input type="date" id="date" required>
+            <h3>Select Time</h3>
+
+            <div class="time">
+
+                <label>
+                    <input type="radio" name="time" value="10 AM - 12 PM" required>
+                    10 AM - 12 PM
+                </label>
+
+                <label>
+                    <input type="radio" name="time" value="12 PM - 2 PM">
+                    12 PM - 2 PM
+                </label>
+
+                <label>
+                    <input type="radio" name="time" value="2 PM - 4 PM">
+                    2 PM - 4 PM
+                </label>
+
+                <label>
+                    <input type="radio" name="time" value="4 PM - 6 PM">
+                    4 PM - 6 PM
+                </label>
+
+            </div>
+            <label for="message">Message</label>
+
+            <textarea id="message"
+                      rows="4"
+                      placeholder="Enter your message"></textarea>
+
+            <div style="text-align:center;">
+                <button type="submit">Submit Booking</button>
+            </div>
+
+        </form>
+        <div id="successMessage">
+             Booking Successful! <br>
+            Your appointment has been confirmed.
+        </div>
+
+    </div>
+
+
+    <section style="padding: 20px;">
+
+        <h2>Booking Information</h2>
+
+        <p>
+            <strong>Opening Hours:</strong>
+            Monday - Sunday, 10:00 AM - 8:00 PM
+        </p>
+
+        <p>
+            <strong>Contact Number:</strong>
+            0300-1234567
+        </p>
+
+        <p>
+            <strong>Address:</strong>
+            Lahore, Pakistan
+        </p>
+
+    </section>
+
+
+    <footer>
+        <p>© GUL Beauty Saloon</p>
+    </footer>
+    <script>
+
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+            let services = document.querySelectorAll(
+                'input[name="service"]:checked'
+            );
+
+            if (services.length === 0) {
+                alert("Please select at least one service.");
+                return;
+            }
+            document.getElementById("successMessage").style.display = "block";
+
+            // Scroll to successful message
+            document.getElementById("successMessage").scrollIntoView({
+                behavior: "smooth"
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

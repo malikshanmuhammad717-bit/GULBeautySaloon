@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUL Beauty Saloon - Sign Up</title>
+</head>
+
+<body>
+
+    <h1>GUL Beauty Saloon</h1>
+
+    <h2>Sign Up</h2>
+
+    <form onsubmit="signup(event)">
+
+        <label>Full Name:</label>
+        <input type="text" id="name" required>
+
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" required>
+
+        <br><br>
+
+        <button type="submit">Sign Up</button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function signup(event) {
+            event.preventDefault();
+
+            document.getElementById("message").innerHTML =
+                "✅ Sign Up Successful!";
+        }
+    </script>
+
+</body>
+</html>
