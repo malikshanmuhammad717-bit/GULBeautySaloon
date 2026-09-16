@@ -107,6 +107,29 @@
             padding: 15px;
             margin-top: 30px;
         }
+        /* Product Grid & Card Responsiveness */
+.product-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+}
+
+.product-card {
+    flex: 1 1 300px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.product-card img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 250px !important;
+    object-fit: cover !important;
+}
     </style>
 </head>
 <body>
@@ -152,34 +175,34 @@
   .price { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
   .buy-btn { width: 100%; padding: 10px; border: 1px solid #333; border-radius: 6px; background: white; cursor: pointer; }
 </style>
-
+<!-- Single Parent Container for Grid -->
 <div class="product-grid">
 
-  <div class="product-card">
-    <h2>Hair care</h2>
-    <img src="WhatsApp Image 2026-09-15 at 11.29.14 PM.jpeg">
-    <div class="category">Hair Care</div>
-    <p>Haircut | Hair Styling | Hair coloring</p>
-  </div>
-  <div class="product-grid">
+    <!-- Card 1: Hair care -->
+    <div class="product-card">
+        <h2>Hair care</h2>
+        <img src="WhatsApp Image 2026-09-15 at 11.29.14 PM.jpeg">
+        <div class="category">Hair Care</div>
+        <p>Haircut | Hair Styling | Hair coloring</p>
+    </div>
 
-  <div class="product-card">
-    <h2>Threading & Waxing</h2>
-    <img src="WhatsApp Image 2026-09-15 at 11.29.14 PM (2).jpeg">
-    <div class="category">Threading & Waxing</div>
-    <p>Eyebrow Threading | Face threading | Waxing</p>
-  </div>
-</div>
-  <div class="product-grid">
+    <!-- Card 2: Threading & Waxing -->
+    <div class="product-card">
+        <h2>Threading & Waxing</h2>
+        <img src="WhatsApp Image 2026-09-15 at 11.29.14 PM (2).jpeg">
+        <div class="category">Threading & Waxing</div>
+        <p>Eyebrow Threading | Face threading | Waxing</p>
+    </div>
 
-  <div class="product-card">
-    <h2>Make up</h2>
-    <img src="WhatsApp Image 2026-09-15 at 11.29.14 PM (1).jpeg">
-    <div class="category">Make up</div>
-    <p>Party makeup | Bridal makeup | simple makeup</p>
-  </div>
+    <!-- Card 3: Make up -->
+    <div class="product-card">
+        <h2>Make up</h2>
+        <img src="WhatsApp Image 2026-09-15 at 11.29.14 PM (1).jpeg">
+        <div class="category">Make up</div>
+        <p>Party makeup | Bridal makeup | Simple makeup</p>
+    </div>
 
-</div>
+</div> <!-- Closing of product-grid -->
 </script>
     </section>
     <footer style="background-color:cornflowerblue;text-align: center;">
